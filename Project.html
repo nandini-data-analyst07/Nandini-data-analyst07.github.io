@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Details | Nandini Kumari</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Segoe UI",Arial,sans-serif;background:radial-gradient(circle at 20% 10%,#28172f 0%,transparent 28%),radial-gradient(circle at 90% 70%,#21152d 0%,transparent 25%),#090a0f;color:#eee;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{max-width:900px;margin:30px auto;padding:0 20px}
+.back-btn{display:inline-block;margin-bottom:20px;padding:8px 16px;background:#15131a;border:1px solid #554454;border-radius:8px;color:#e6b3df;font-size:13px}
+.back-btn:hover{background:#291b2b}
+.card{background:rgba(14,15,22,.92);border:1px solid #36303b;border-radius:18px;padding:35px;box-shadow:0 0 35px rgba(190,80,200,.08)}
+.project-num{color:#e39bd8;font-size:12px;letter-spacing:2px;font-weight:bold}
+.title{font-size:28px;margin:10px 0;color:#fff}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0 25px}
+.tool{padding:4px 10px;background:#18151d;border:1px solid #39313d;border-radius:5px;color:#c9c1cc;font-size:12px}
+.img-container{margin:25px 0;border-radius:12px;overflow:hidden;border:1px solid #36303b}
+.img-container img{width:100%;height:auto;display:block}
+.section-title{color:#e39bd8;font-size:18px;margin:25px 0 10px;border-bottom:1px solid #302d35;padding-bottom:5px}
+p, li{color:#aaaab4;font-size:14px;margin-bottom:10px}
+ul{padding-left:20px}
+</style>
+</head>
+<body>
+
+<div class="container">
+<a href="index.html" class="back-btn">← Back to Portfolio</a>
+<div class="card" id="project-content">
+  <p>Loading project details...</p>
+</div>
+</div>
+
+<script>
+const projects = {
+  1: {
+    number: "PROJECT_01",
+    title: "Auto Sales Performance Dashboard",
+    tools: ["Excel", "Pivot Tables", "Pivot Charts", "Slicers"],
+    description: "Built an interactive Excel dashboard analyzing $9.76M in sales and 96,428 units ordered across multiple countries and product categories.",
+    image: "https://raw.githubusercontent.com/nandini-data-analyst07/nandini-data-analyst07.github.io/main/auto_sales.png",
+    highlights: [
+      "Analyzed total sales revenue of $9.76M and order volume of 96,428 units.",
+      "Categorized sales distribution by territory, product line, and deal size.",
+      "Created dynamic slicers for seamless user filtering."
+    ]
+  },
+  2: {
+    number: "PROJECT_02",
+    title: "HR Analytics Dashboard",
+    tools: ["Excel", "Data Cleaning", "Dashboard", "Slicers"],
+    description: "Cleaned and transformed raw employee data into an interactive HR dashboard covering workforce distribution, employee status, performance and engagement trends.",
+    image: "https://raw.githubusercontent.com/nandini-data-analyst07/nandini-data-analyst07.github.io/main/hr_analytics.png",
+    highlights: [
+      "Visualized key metrics: headcount, attrition rate, and average tenure.",
+      "Broken down department demographics and gender balance.",
+      "Designed dynamic charts for employee performance and satisfaction levels."
+    ]
+  },
+  3: {
+    number: "PROJECT_03",
+    title: "Spotify Streaming Analytics",
+    tools: ["Power BI", "Data Visualization", "KPI Cards", "Scatter Plot"],
+    description: "Developed a Power BI dashboard analyzing top streamed tracks using KPI cards, artist distribution, streaming trends, and audio feature relations.",
+    image: "https://raw.githubusercontent.com/nandini-data-analyst07/nandini-data-analyst07.github.io/main/spotify.png",
+    highlights: [
+      "Tracked top streams, active artists, and release year distributions.",
+      "Mapped song energy vs. danceability correlations using scatter charts.",
+      "Customized interactive filters for music features and genres."
+    ]
+  },
+  4: {
+    number: "PROJECT_04",
+    title: "HR Data Cleaning Project",
+    tools: ["Excel", "Data Cleaning", "Power Query"],
+    description: "Transformed messy raw HR data into a structured analysis-ready dataset by removing duplicates, handling blanks, standardizing categories, and correcting formats.",
+    image: "https://raw.githubusercontent.com/nandini-data-analyst07/nandini-data-analyst07.github.io/main/hr_cleaning.png",
+    highlights: [
+      "Standardized text casings, date formats, and employee ID fields.",
+      "Handled null values and removed redundant duplicate entries.",
+      "Prepared clean dataset ready for business intelligence tools."
+    ]
+  }
+};
+
+const urlParams = new URLSearchParams(window.location.search);
+const projectId = urlParams.get('project');
+const contentDiv = document.getElementById('project-content');
+
+if (projects[projectId]) {
+  const p = projects[projectId];
+  let toolsHTML = p.tools.map(t => `<span class="tool">${t}</span>`).join('');
+  let highlightsHTML = p.highlights.map(h => `<li>${h}</li>`).join('');
+
+  contentDiv.innerHTML = `
+    <div class="project-num">${p.number}</div>
+    <h1 class="title">${p.title}</h1>
+    <div class="tools">${toolsHTML}</div>
+    <p>${p.description}</p>
+    <div class="img-container">
+      <img src="${p.image}" alt="${p.title}" onerror="this.src='https://via.placeholder.com/800x450?text=Dashboard+Preview+Coming+Soon'">
+    </div>
+    <h2 class="section-title">Key Highlights & Insights</h2>
+    <ul>${highlightsHTML}</ul>
+  `;
+} else {
+  contentDiv.innerHTML = `<p>Project not found. <a href="index.html" style="color:#e39bd8;">Return to Home</a></p>`;
+}
+</script>
+</body>
+</html>
