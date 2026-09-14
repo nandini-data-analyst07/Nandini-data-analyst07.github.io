@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,11 @@
 <title>Nandini Kumari | Data Analyst</title>
 
 <style>
+
+/* =========================
+   BASIC SETTINGS
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -18,290 +24,627 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #0f1117;
-    color: #f5f5f5;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(circle at 20% 10%, #28172f 0%, transparent 28%),
+        radial-gradient(circle at 90% 70%, #21152d 0%, transparent 25%),
+        #090a0f;
+    color: #eeeeee;
     line-height: 1.6;
 }
 
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
+a {
+    color: inherit;
 }
 
-/* Navigation */
 
-nav {
-    position: sticky;
-    top: 0;
-    background: rgba(15,17,23,0.95);
-    padding: 18px 0;
-    border-bottom: 1px solid #292d38;
-    z-index: 10;
-}
+/* =========================
+   MAIN LAYOUT
+========================= */
 
-.nav-content {
+.page {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    max-width: 1250px;
+    margin: 25px auto;
+    gap: 22px;
+    padding: 0 18px;
 }
 
-.logo {
-    font-size: 22px;
-    font-weight: bold;
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 290px;
+    min-width: 290px;
+    background: rgba(14, 15, 22, 0.92);
+    border: 1px solid #36303b;
+    border-radius: 18px;
+    padding: 25px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+    box-shadow: 0 0 35px rgba(190, 80, 200, 0.08);
 }
 
-nav a {
-    color: #ccc;
+.profile {
+    text-align: center;
+}
+
+.profile img {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #8d668d;
+    box-shadow: 0 0 25px rgba(221, 111, 214, 0.25);
+}
+
+.profile h1 {
+    font-size: 25px;
+    margin-top: 17px;
+}
+
+.role {
+    color: #e8a6df;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.sidebar-text {
+    color: #a9a9b2;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.sidebar-line {
+    height: 1px;
+    background: #302d35;
+    margin: 22px 0;
+}
+
+.info {
+    font-size: 13px;
+    color: #aaaab4;
+}
+
+.info div {
+    margin: 10px 0;
+}
+
+.info span {
+    color: #d88dcc;
+    margin-right: 7px;
+}
+
+.info a {
+    color: #b9a7bd;
     text-decoration: none;
-    margin-left: 20px;
 }
 
-nav a:hover {
-    color: #7c9cff;
+.info a:hover {
+    color: #f1a9e7;
 }
 
-/* Hero */
+.side-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #554454;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #e6b3df;
+    background: #15131a;
+}
+
+.side-button:hover {
+    background: #291b2b;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main {
+    flex: 1;
+    min-width: 0;
+    background: rgba(11, 12, 17, 0.86);
+    border: 1px solid #36303b;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+
+/* Decorative top */
+
+.top-decoration {
+    height: 65px;
+    background:
+        linear-gradient(160deg,
+        transparent 0%,
+        #38243c 45%,
+        #9a628f 50%,
+        #352238 56%,
+        transparent 100%);
+    opacity: 0.65;
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
     text-align: center;
-    padding: 100px 20px 80px;
+    padding: 45px 30px;
+    border-bottom: 1px solid #302d35;
 }
 
-.hero h1 {
-    font-size: 52px;
-    margin-bottom: 10px;
-}
-
-.hero h1 span {
-    color: #7c9cff;
+.hero-small {
+    color: #d48bc8;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
 }
 
 .hero h2 {
-    color: #bbb;
-    font-size: 25px;
-    font-weight: normal;
-    margin-bottom: 20px;
+    font-size: 43px;
+    margin-bottom: 10px;
+}
+
+.hero h2 span {
+    color: #e49bd9;
 }
 
 .hero p {
     max-width: 650px;
     margin: auto;
-    color: #aaa;
-    font-size: 17px;
+    color: #a9a9b2;
+    font-size: 15px;
 }
 
-.buttons {
-    margin-top: 30px;
+.hero-buttons {
+    margin-top: 25px;
 }
 
-.btn {
+.button {
     display: inline-block;
-    padding: 12px 22px;
-    margin: 7px;
-    border-radius: 8px;
+    padding: 9px 18px;
+    margin: 5px;
+    border: 1px solid #624e62;
+    border-radius: 7px;
     text-decoration: none;
-    border: 1px solid #7c9cff;
-    color: white;
+    color: #e5c1e0;
+    background: #14131a;
+    font-size: 13px;
 }
 
-.btn:hover {
-    background: #7c9cff;
-    color: #111;
+.button:hover {
+    background: #302034;
+    border-color: #b878ad;
 }
 
-/* Sections */
 
-section {
-    padding: 70px 0;
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 38px 45px;
+    border-bottom: 1px solid #302d35;
 }
 
-section h2 {
-    font-size: 32px;
-    margin-bottom: 25px;
-    color: #7c9cff;
+.section-title {
+    color: #e39bd8;
+    font-size: 19px;
+    margin-bottom: 18px;
 }
 
-section p {
-    color: #bbb;
+.section-title::before {
+    content: "✦ ";
+    color: #c778ba;
 }
 
-/* Skills */
+.section p {
+    color: #aaaab3;
+    font-size: 14px;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
 
 .skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 20px;
+    gap: 8px;
 }
 
 .skill {
-    background: #191d27;
-    border: 1px solid #303644;
-    padding: 10px 18px;
-    border-radius: 20px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    background: #18151d;
+    border: 1px solid #39313d;
+    color: #c9c1cc;
+    font-size: 12px;
 }
 
-/* Projects */
+.skill:hover {
+    border-color: #a86ba0;
+    color: #f0a9e4;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
 }
 
 .project {
-    background: #191d27;
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid #303644;
+    background: #111218;
+    border: 1px solid #34303a;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.25s;
+}
+
+.project:hover {
+    transform: translateY(-4px);
+    border-color: #a3699d;
+    box-shadow: 0 8px 25px rgba(183, 91, 174, 0.08);
+}
+
+.project-number {
+    color: #96648e;
+    font-size: 11px;
 }
 
 .project h3 {
-    margin-bottom: 10px;
-    color: white;
+    margin: 6px 0 9px;
+    font-size: 17px;
+    color: #e8e4e8;
 }
 
 .project p {
-    margin-bottom: 15px;
+    font-size: 13px;
+    color: #9f9fa9;
 }
 
-.project a {
-    color: #7c9cff;
-    text-decoration: none;
+.project-tools {
+    margin-top: 14px;
+    color: #d28ac5;
+    font-size: 11px;
 }
 
-/* Education */
 
-.card {
-    background: #191d27;
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid #303644;
-    margin-bottom: 15px;
+/* =========================
+   EDUCATION / CERTIFICATES
+========================= */
+
+.timeline {
+    border-left: 1px solid #51404f;
+    padding-left: 22px;
 }
 
-.card h3 {
-    margin-bottom: 5px;
+.timeline-item {
+    margin-bottom: 23px;
+    position: relative;
 }
 
-/* Contact */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: 7px;
+    width: 9px;
+    height: 9px;
+    background: #bd77b1;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #bd77b1;
+}
+
+.timeline-item h3 {
+    font-size: 15px;
+    color: #ded9df;
+}
+
+.timeline-item p {
+    margin-top: 3px;
+    font-size: 12px;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.stat {
+    text-align: center;
+    background: #111218;
+    border: 1px solid #34303a;
+    border-radius: 9px;
+    padding: 18px;
+}
+
+.stat-number {
+    color: #e39bd8;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.stat-label {
+    color: #888892;
+    font-size: 11px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
 
 .contact {
     text-align: center;
 }
 
 .contact p {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
-/* Footer */
 
-footer {
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
     text-align: center;
-    padding: 30px;
-    border-top: 1px solid #292d38;
-    color: #777;
+    padding: 25px;
+    color: #777680;
+    font-size: 11px;
 }
 
-/* Mobile */
 
-@media (max-width: 600px) {
+/* Bottom decoration */
 
-    .hero h1 {
-        font-size: 38px;
+.bottom-decoration {
+    height: 45px;
+    background:
+        linear-gradient(20deg,
+        transparent 0%,
+        #37233a 42%,
+        #98608d 50%,
+        #352239 58%,
+        transparent 100%);
+    opacity: 0.6;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    .page {
+        display: block;
+        margin: 10px auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+        position: relative;
+        top: 0;
+        margin-bottom: 15px;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
     }
 
     .hero h2 {
-        font-size: 20px;
+        font-size: 34px;
     }
 
-    nav a {
-        display: none;
-    }
 }
+
+@media (max-width: 500px) {
+
+    .section {
+        padding: 30px 22px;
+    }
+
+    .hero {
+        padding: 35px 20px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
-<!-- Navigation -->
+<div class="page">
 
-<nav>
-    <div class="container nav-content">
-        <div class="logo">Nandini.</div>
+
+<!-- =========================
+     SIDEBAR
+========================= -->
+
+<aside class="sidebar">
+
+    <div class="profile">
+
+        <img src="https://github.com/nandini-data-analyst07.png"
+             alt="Nandini Kumari">
+
+        <h1>Nandini Kumari</h1>
+
+        <div class="role">
+            Data Analyst Intern
+        </div>
+
+        <p class="sidebar-text">
+            Aspiring Data Analyst passionate about
+            turning raw data into meaningful insights.
+        </p>
+
+    </div>
+
+
+    <div class="sidebar-line"></div>
+
+
+    <div class="info">
 
         <div>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <span>📍</span>
+            New Delhi, India
         </div>
+
+        <div>
+            <span>✉</span>
+            <a href="mailto:nandiniff56@gmail.com">
+                nandiniff56@gmail.com
+            </a>
+        </div>
+
+        <div>
+            <span>in</span>
+            <a href="https://linkedin.com/in/nandini-kumari-524014360"
+               target="_blank">
+                LinkedIn
+            </a>
+        </div>
+
+        <div>
+            <span>⌘</span>
+            <a href="https://github.com/nandini-data-analyst07"
+               target="_blank">
+                GitHub
+            </a>
+        </div>
+
     </div>
-</nav>
 
 
-<!-- Hero -->
+    <a class="side-button"
+       href="mailto:nandiniff56@gmail.com">
+       Let's Connect
+    </a>
 
-<header class="hero">
+</aside>
 
-    <h1>Hi, I'm <span>Nandini Kumari</span></h1>
 
-    <h2>Aspiring Data Analyst</h2>
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="main">
+
+
+<div class="top-decoration"></div>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-small">
+        WELCOME TO MY PORTFOLIO
+    </div>
+
+    <h2>
+        Hello, I'm <span>Nandini</span> ✦
+    </h2>
 
     <p>
-        I am an aspiring Data Analyst passionate about transforming
-        data into meaningful insights. I enjoy working with data,
-        creating dashboards and continuously learning new analytical skills.
+        Data Analyst Intern | SQL | Power BI | Excel | Tableau
     </p>
 
-    <div class="buttons">
+    <div class="hero-buttons">
 
-        <a class="btn"
-           href="https://github.com/Nandini-data-analyst07"
+        <a class="button"
+           href="https://github.com/nandini-data-analyst07"
            target="_blank">
-           GitHub
+           GitHub ↗
         </a>
 
-        <a class="btn"
-           href="#projects">
-           View My Projects
+        <a class="button"
+           href="https://linkedin.com/in/nandini-kumari-524014360"
+           target="_blank">
+           LinkedIn ↗
+        </a>
+
+        <a class="button"
+           href="mailto:nandiniff56@gmail.com">
+           Email
         </a>
 
     </div>
-
-</header>
-
-
-<!-- About -->
-
-<section id="about">
-
-<div class="container">
-
-    <h2>About Me</h2>
-
-    <p>
-        I am currently building my career in Data Analytics and
-        developing practical skills through projects and continuous
-        learning. I have worked with Excel, SQL, Power BI, Tableau
-        and Python, and I enjoy exploring datasets, finding patterns
-        and presenting insights through dashboards and visualizations.
-    </p>
-
-</div>
 
 </section>
 
 
-<!-- Skills -->
 
-<section id="skills">
+<!-- ABOUT -->
 
-<div class="container">
+<section class="section" id="about">
 
-    <h2>My Skills</h2>
+    <h2 class="section-title">
+        about me
+    </h2>
+
+    <p>
+        Analytically minded undergraduate with hands-on experience
+        in data cleaning, SQL analysis, Excel reporting, and
+        interactive dashboard development. I enjoy transforming
+        raw datasets into structured insights using Excel, SQL,
+        Power BI, and Tableau.
+    </p>
+
+    <br>
+
+    <p>
+        I am currently building my practical experience through
+        data analytics projects and continuously learning new
+        analytical tools. I am seeking a Data Analyst, BI, or MIS
+        Internship where I can apply my skills in a professional
+        environment.
+    </p>
+
+</section>
+
+
+
+<!-- SKILLS -->
+
+<section class="section" id="skills">
+
+    <h2 class="section-title">
+        skills & tools
+    </h2>
 
     <div class="skills">
 
@@ -311,188 +654,390 @@ footer {
         <div class="skill">Power BI</div>
         <div class="skill">Tableau</div>
         <div class="skill">Python</div>
-        <div class="skill">Statistics</div>
+        <div class="skill">Power Query</div>
+        <div class="skill">Pivot Tables</div>
+        <div class="skill">Pivot Charts</div>
+        <div class="skill">Slicers</div>
         <div class="skill">Data Cleaning</div>
+        <div class="skill">EDA</div>
         <div class="skill">Data Visualization</div>
+        <div class="skill">KPI Reporting</div>
+        <div class="skill">Data Interpretation</div>
+        <div class="skill">Analytical Thinking</div>
+        <div class="skill">Business Insights</div>
 
     </div>
-
-</div>
 
 </section>
 
 
-<!-- Projects -->
 
-<section id="projects">
+<!-- PROJECTS -->
 
-<div class="container">
+<section class="section" id="projects">
 
-    <h2>My Projects</h2>
+    <h2 class="section-title">
+        featured projects
+    </h2>
+
 
     <div class="projects">
 
+
         <div class="project">
 
-            <h3>HR Analytics Dashboard</h3>
+            <div class="project-number">
+                PROJECT_01
+            </div>
+
+            <h3>
+                Auto Sales Performance Dashboard
+            </h3>
 
             <p>
-                An HR analytics dashboard created after cleaning
-                and analysing employee data. The project focuses
-                on presenting useful HR insights through dashboards.
+                Built an interactive Excel dashboard analyzing
+                $9.76M in sales and 96,428 units ordered across
+                multiple countries and product categories.
             </p>
 
-            <a href="https://github.com/Nandini-data-analyst07"
-               target="_blank">
-               View on GitHub →
-            </a>
+            <div class="project-tools">
+                Excel · Pivot Tables · Pivot Charts · Slicers
+            </div>
 
         </div>
 
 
+
         <div class="project">
 
-            <h3>Spotify Power BI Dashboard</h3>
+            <div class="project-number">
+                PROJECT_02
+            </div>
+
+            <h3>
+                HR Analytics Dashboard
+            </h3>
 
             <p>
-                An interactive Power BI dashboard created to
-                explore and visualize Spotify-related data
-                through charts and dashboard elements.
+                Cleaned and transformed raw employee data into
+                an interactive HR dashboard covering workforce
+                distribution, employee status, performance and
+                engagement trends.
             </p>
 
-            <a href="https://github.com/Nandini-data-analyst07"
-               target="_blank">
-               View on GitHub →
-            </a>
+            <div class="project-tools">
+                Excel · Data Cleaning · Dashboard · Slicers
+            </div>
 
         </div>
 
 
+
         <div class="project">
 
-            <h3>Auto Sales Analysis</h3>
+            <div class="project-number">
+                PROJECT_03
+            </div>
+
+            <h3>
+                Spotify Streaming Analytics
+            </h3>
 
             <p>
-                A data analysis project focused on automobile
-                sales data, using analytical techniques and
-                visualizations to understand sales performance.
+                Developed a Power BI dashboard analyzing the
+                top 100 all-time streamed tracks using KPI cards,
+                artist distribution, streaming trends and an
+                Energy vs. Danceability scatter plot.
             </p>
 
-            <a href="https://github.com/Nandini-data-analyst07"
-               target="_blank">
-               View on GitHub →
-            </a>
+            <div class="project-tools">
+                Power BI · Data Visualization · KPI · Analytics
+            </div>
 
         </div>
 
 
+
         <div class="project">
 
-            <h3>SQL Data Analysis</h3>
+            <div class="project-number">
+                PROJECT_04
+            </div>
+
+            <h3>
+                HR Data Cleaning Project
+            </h3>
 
             <p>
-                A SQL project demonstrating data querying,
-                filtering, aggregation and analysis to extract
-                useful information from datasets.
+                Transformed messy raw HR data into a structured
+                analysis-ready dataset by removing duplicates,
+                handling blanks, standardizing categories and
+                correcting formats.
             </p>
 
-            <a href="https://github.com/Nandini-data-analyst07"
-               target="_blank">
-               View on GitHub →
-            </a>
+            <div class="project-tools">
+                Excel · Data Cleaning · Power Query
+            </div>
 
         </div>
+
+
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT_05
+            </div>
+
+            <h3>
+                Employee Database SQL Analysis
+            </h3>
+
+            <p>
+                Independently solved 11 analytical SQL questions
+                using Employee, Department and Project tables.
+            </p>
+
+            <div class="project-tools">
+                SQL · JOINs · CTEs · Subqueries · Window Functions
+            </div>
+
+        </div>
+
+
+
+        <div class="project">
+
+            <div class="project-number">
+                CURRENTLY BUILDING
+            </div>
+
+            <h3>
+                More Projects Coming Soon ✦
+            </h3>
+
+            <p>
+                I am continuously working on new data analytics
+                projects to strengthen my practical skills and
+                expand my portfolio.
+            </p>
+
+            <div class="project-tools">
+                Learning · Building · Analysing
+            </div>
+
+        </div>
+
 
     </div>
-
-</div>
 
 </section>
 
 
-<!-- Education -->
 
-<section id="education">
+<!-- STATS -->
 
-<div class="container">
+<section class="section">
 
-    <h2>Education & Certifications</h2>
+    <h2 class="section-title">
+        portfolio snapshot
+    </h2>
 
-    <div class="card">
+    <div class="stats">
 
-        <h3>BA Programme – History + Political Science</h3>
+        <div class="stat">
+            <div class="stat-number">05</div>
+            <div class="stat-label">
+                DATA PROJECTS
+            </div>
+        </div>
 
-        <p>
-            Maharaja Agrasen College, University of Delhi
-        </p>
+        <div class="stat">
+            <div class="stat-number">03</div>
+            <div class="stat-label">
+                CERTIFICATIONS
+            </div>
+        </div>
 
-    </div>
-
-
-    <div class="card">
-
-        <h3>Data Analytics</h3>
-
-        <p>
-            Delhi School of Skill Development (DSSD)
-        </p>
-
-    </div>
-
-
-    <div class="card">
-
-        <h3>Cisco Data Analytics Essentials</h3>
-
-        <p>
-            Cisco Networking Academy
-        </p>
+        <div class="stat">
+            <div class="stat-number">05+</div>
+            <div class="stat-label">
+                ANALYTICS TOOLS
+            </div>
+        </div>
 
     </div>
-
-</div>
 
 </section>
 
 
-<!-- Contact -->
 
-<section id="contact">
+<!-- EDUCATION -->
 
-<div class="container contact">
+<section class="section">
 
-    <h2>Let's Connect</h2>
+    <h2 class="section-title">
+        education
+    </h2>
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <h3>
+                Bachelor of Arts (B.A.) Programme
+                — History + Political Science
+            </h3>
+
+            <p>
+                Maharaja Agrasen College, University of Delhi
+                <br>
+                2026–2029 (Expected)
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>
+                Class XII — 75%
+            </h3>
+
+            <p>
+                2025
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- CERTIFICATIONS -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        certifications
+    </h2>
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <h3>
+                Data Analytics — DSSD
+            </h3>
+
+            <p>
+                Delhi School of Skill Development
+                <br>
+                9-Month Program · 2025–2026
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>
+                Data Analytics Essentials
+            </h3>
+
+            <p>
+                Cisco Networking Academy
+                <br>
+                September 2026
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>
+                Mastering Power BI
+            </h3>
+
+            <p>
+                Data Analysis & Dashboard Creation
+                <br>
+                Skill India Digital Hub / PHN Technology
+                · September 2026
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section class="section contact" id="contact">
+
+    <h2 class="section-title">
+        let's connect
+    </h2>
 
     <p>
-        I'm currently building my skills and looking for
-        opportunities to start my career in Data Analytics.
+        I'm currently looking for opportunities to start
+        my career in Data Analytics.
     </p>
 
-    <div class="buttons">
+    <div class="hero-buttons">
 
-        <a class="btn"
-           href="https://github.com/Nandini-data-analyst07"
+        <a class="button"
+           href="mailto:nandiniff56@gmail.com">
+           Email Me
+        </a>
+
+        <a class="button"
+           href="https://linkedin.com/in/nandini-kumari-524014360"
+           target="_blank">
+           LinkedIn
+        </a>
+
+        <a class="button"
+           href="https://github.com/nandini-data-analyst07"
            target="_blank">
            GitHub
         </a>
 
-        <a class="btn"
-           href="mailto:your-email@example.com">
-           Email Me
-        </a>
-
     </div>
-
-</div>
 
 </section>
 
 
-<footer>
 
-    © 2026 Nandini Kumari | Data Analyst Portfolio
+<div class="footer">
 
-</footer>
+    <p>
+        © 2026 Nandini Kumari · Built with HTML & CSS
+    </p>
+
+    <p>
+        ✦ Data · Dashboards · Insights ✦
+    </p>
+
+</div>
+
+
+<div class="bottom-decoration"></div>
+
+
+</main>
+
+</div>
 
 </body>
 </html>
