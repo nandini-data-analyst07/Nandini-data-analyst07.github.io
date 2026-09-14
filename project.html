@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project | Nandini Kumari</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Segoe UI",Arial,sans-serif;background:radial-gradient(circle at 20% 10%,#28172f 0%,transparent 28%),radial-gradient(circle at 90% 70%,#21152d 0%,transparent 25%),#090a0f;color:#eee;line-height:1.6}
+.container{max-width:1050px;margin:30px auto;padding:0 20px}
+.back{display:inline-block;margin-bottom:20px;padding:9px 16px;border:1px solid #554454;border-radius:7px;text-decoration:none;color:#e6b3df;background:#14131a;font-size:13px}
+.back:hover{background:#291b2b;border-color:#a86ba0}
+.project-page{background:rgba(11,12,17,.92);border:1px solid #36303b;border-radius:18px;overflow:hidden;box-shadow:0 0 35px rgba(190,80,200,.08)}
+.header{padding:50px 45px;border-bottom:1px solid #302d35;text-align:center}
+.project-number{color:#d48bc8;font-size:12px;letter-spacing:3px;margin-bottom:12px}
+.header h1{font-size:38px;margin-bottom:12px}.header p{color:#a9a9b2;max-width:700px;margin:auto;font-size:15px}
+.content{padding:40px 45px}.title{color:#e39bd8;font-size:19px;margin-bottom:15px}.title::before{content:"✦ ";color:#c778ba}
+.description{color:#aaaab3;font-size:14px;margin-bottom:30px}
+.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-bottom:35px}
+.info-box{background:#111218;border:1px solid #34303a;border-radius:10px;padding:18px}.info-box h3{color:#e39bd8;font-size:13px;margin-bottom:7px}.info-box p{color:#a9a9b2;font-size:13px}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:35px}.tool{padding:6px 12px;background:#18151d;border:1px solid #39313d;border-radius:5px;color:#d5cbd6;font-size:12px}
+.screenshots{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:20px}
+.screenshot{background:#111218;border:1px solid #34303a;border-radius:10px;overflow:hidden;min-height:120px}
+.screenshot img{width:100%;height:auto;display:block}.screenshot-caption{padding:10px;text-align:center;color:#9f9fa9;font-size:11px}
+.insights{margin-top:35px}.insights ul{padding-left:20px;color:#aaaab3;font-size:14px}.insights li{margin-bottom:9px}
+.footer{text-align:center;padding:25px;color:#777680;font-size:11px;border-top:1px solid #302d35}
+@media(max-width:700px){.container{margin:10px auto;padding:0 12px}.header{padding:35px 22px}.header h1{font-size:28px}.content{padding:30px 22px}.info-grid,.screenshots{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="index.html" class="back">← Back to Portfolio</a>
+<div class="project-page">
+<div class="header">
+<div class="project-number" id="projectNumber">PROJECT</div>
+<h1 id="projectTitle">Project</h1>
+<p id="projectSubtitle">Data Analytics Project</p>
+</div>
+<div class="content">
+<h2 class="title">Project Overview</h2>
+<p class="description" id="projectDescription"></p>
+<div class="info-grid">
+<div class="info-box"><h3>Objective</h3><p id="objective"></p></div>
+<div class="info-box"><h3>Tools Used</h3><p id="toolsText"></p></div>
+<div class="info-box"><h3>Dataset</h3><p id="dataset"></p></div>
+<div class="info-box"><h3>Key Skills</h3><p id="skillsText"></p></div>
+</div>
+<h2 class="title">Technologies & Tools</h2>
+<div class="tools" id="tools"></div>
+<h2 class="title">Project Screenshots</h2>
+<div class="screenshots" id="screenshots"></div>
+<div class="insights"><h2 class="title">Key Insights</h2><ul id="insights"></ul></div>
+</div>
+<div class="footer">© 2026 Nandini Kumari · Data Analytics Portfolio</div>
+</div>
+</div>
+
+<script>
+const projects={
+1:{number:"PROJECT_01",title:"Sales Dashboard",subtitle:"Interactive Excel Sales Dashboard",description:"Built an interactive Excel dashboard to analyze automobile sales performance across countries, products and time periods. The dashboard converts raw sales data into meaningful business insights through KPIs, Pivot Tables, Pivot Charts and Slicers.",objective:"Analyze sales performance, identify important trends and provide an interactive view of revenue and order performance.",tools:"Microsoft Excel, Pivot Tables, Pivot Charts, Slicers",dataset:"Automobile sales dataset containing 96,428 units ordered and approximately $9.76M in sales.",skills:"Data Analysis, Excel Dashboarding, KPI Reporting, Data Visualization",toolList:["Excel","Pivot Tables","Pivot Charts","Slicers","Data Analysis","KPI Reporting"],screenshots:[["Images/project1-1.jpg","Auto Sales Dashboard"]],insights:["Analyzed approximately $9.76M in sales.","Analyzed 96,428 units ordered.","Compared sales performance across countries and product categories.","Used interactive slicers to make the dashboard easier to explore.","Created visual KPIs for quick business understanding."]},
+2:{number:"PROJECT_02",title:"HR Analytics Dashboard",subtitle:"Interactive Human Resources Dashboard",description:"Cleaned and transformed raw employee information into an interactive HR analytics dashboard. The project focuses on workforce distribution, employee status, performance and engagement trends.",objective:"Create an easy-to-understand HR dashboard that helps analyze employee data and workforce trends.",tools:"Microsoft Excel, Data Cleaning, Pivot Tables, Dashboard, Slicers",dataset:"Employee and workforce dataset containing information related to employee status, departments and performance.",skills:"Data Cleaning, Excel Dashboard, HR Analytics, Data Visualization",toolList:["Excel","Data Cleaning","Pivot Tables","Dashboard","Slicers","HR Analytics"],screenshots:[["Images/project2-1.jpg","HR Analytics Dashboard"]],insights:["Analyzed workforce distribution.","Reviewed employee status and department information.","Created interactive dashboard components.","Used slicers to filter HR information.","Presented HR information in a visual format."]},
+3:{number:"PROJECT_03",title:"Spotify Dashboard",subtitle:"Power BI Music Streaming Dashboard",description:"Developed a Power BI dashboard analyzing the top 100 all-time streamed tracks. The dashboard uses KPI cards, artist distribution, streaming trends and an Energy vs. Danceability scatter plot.",objective:"Analyze music streaming performance and identify patterns between popular tracks, artists and audio characteristics.",tools:"Power BI, Data Visualization, KPI Cards, Scatter Plot",dataset:"Top 100 all-time streamed Spotify tracks dataset.",skills:"Power BI, Data Visualization, KPI Analysis, Business Insights",toolList:["Power BI","KPI Cards","Data Visualization","Scatter Plot","Analytics"],screenshots:[["Images/project3-1.jpg","Spotify Power BI Dashboard"]],insights:["Analyzed the top 100 streamed tracks.","Compared streaming performance between artists.","Visualized track and artist distribution.","Analyzed Energy vs. Danceability.","Used KPI cards for quick performance analysis."]},
+4:{number:"PROJECT_04",title:"Data Cleaning Dashboard",subtitle:"Transforming Raw HR Data into Analysis-Ready Data",description:"Transformed messy raw HR data into a structured and analysis-ready dataset. The project focused on identifying duplicates, handling missing values, standardizing categories and correcting inconsistent formats.",objective:"Prepare raw HR data for reliable analysis by cleaning and standardizing the dataset.",tools:"Excel, Power Query, Data Cleaning",dataset:"Raw HR employee dataset containing inconsistent, duplicate and incomplete records.",skills:"Data Cleaning, Power Query, Data Preparation, Data Quality",toolList:["Excel","Power Query","Data Cleaning","Data Preparation"],screenshots:[["Images/project4-1.jpg","Raw HR Data"],["Images/project4-2.jpg","Cleaned HR Data"]],insights:["Removed duplicate records.","Handled blank and missing values.","Standardized categories.","Corrected inconsistent data formats.","Prepared the dataset for further analysis."]},
+5:{number:"PROJECT_05",title:"GitHub SQL Dashboard",subtitle:"Analytical SQL Project",description:"Independently solved 11 analytical SQL questions using Employee, Department and Project tables. The project demonstrates the use of relational database concepts and advanced SQL techniques.",objective:"Use SQL to extract meaningful business insights from employee, department and project data.",tools:"SQL, JOINs, CTEs, Subqueries, Window Functions",dataset:"Employee, Department and Project relational database tables.",skills:"SQL Analysis, JOINs, CTEs, Subqueries, Window Functions",toolList:["SQL","JOINs","CTEs","Subqueries","Window Functions","Data Analysis"],screenshots:[],github:"https://github.com/nandini-data-analyst07/employee-database-sql-analysis",insights:["Solved 11 analytical SQL questions.","Used JOINs to combine relational tables.","Applied CTEs for structured queries.","Used subqueries for analytical calculations.","Applied window functions for advanced analysis."]}
+};
+
+const id=new URLSearchParams(location.search).get("project")||"1";
+const p=projects[id]||projects[1];
+document.title=p.title+" | Nandini Kumari";
+document.getElementById("projectNumber").textContent=p.number;
+document.getElementById("projectTitle").textContent=p.title;
+document.getElementById("projectSubtitle").textContent=p.subtitle;
+document.getElementById("projectDescription").textContent=p.description;
+document.getElementById("objective").textContent=p.objective;
+document.getElementById("toolsText").textContent=p.tools;
+document.getElementById("dataset").textContent=p.dataset;
+document.getElementById("skillsText").textContent=p.skills;
+
+p.toolList.forEach(x=>{const d=document.createElement("div");d.className="tool";d.textContent=x;document.getElementById("tools").appendChild(d)});
+p.screenshots.forEach(x=>{const d=document.createElement("div");d.className="screenshot";d.innerHTML='<img src="'+x[0]+'" alt="'+x[1]+'" onerror="this.style.display=\'none\'"><div class="screenshot-caption">'+x[1]+'</div>';document.getElementById("screenshots").appendChild(d)});
+if(p.github){const a=document.createElement("a");a.href=p.github;a.target="_blank";a.rel="noopener";a.textContent="View SQL Project on GitHub ↗";a.style.cssText="display:inline-block;margin-top:25px;padding:10px 18px;border:1px solid #624e62;border-radius:8px;text-decoration:none;color:#e5c1e0;background:#14131a;font-size:13px";document.getElementById("screenshots").after(a)}
+p.insights.forEach(x=>{const li=document.createElement("li");li.textContent=x;document.getElementById("insights").appendChild(li)});
+</script>
+</body>
+</html>
